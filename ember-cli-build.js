@@ -12,7 +12,10 @@ module.exports = function (defaults) {
     'ember-fetch': {
       preferNative: true,
     },
-    urls: ['/'],
+
+    prember: {
+      urls: ['/'],
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
