@@ -24,7 +24,7 @@
     "dev": "concurrently \"npm:dev:*\" --names \"dev:\"",
     "dev:ember": "ember server -p 4200",
     "dev:reverse-ssl": "local-ssl-proxy --source 443 --target 4200",
-    "start": "ember serve",
+    "start": "ember serve -p 4000",
     "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
     "test:ember": "ember test"
   },
@@ -94,6 +94,8 @@
     "loader.js": "^4.7.0",
     "local-ssl-proxy": "^2.0.5",
     "pre-commit": "^1.2.2",
+    "prember": "^2.0.0",
+    "prember-middleware": "^0.1.0",
     "prettier": "^3.0.3",
     "qunit": "^2.20.0",
     "qunit-dom": "^2.0.0",

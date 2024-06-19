@@ -12,6 +12,7 @@ module.exports = function (defaults) {
     'ember-fetch': {
       preferNative: true,
     },
+    urls: ['/'],
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -27,7 +28,7 @@ module.exports = function (defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return compatBuild(app, Webpack, {
+  const compiledApp = compatBuild(app, Webpack, {
     staticAddonTestSupportTrees: true,
     staticAddonTrees: true,
     staticHelpers: true,
@@ -40,4 +41,5 @@ module.exports = function (defaults) {
       'route.page-not-found',
     ],
   });
+  return require('prember').prerender(app, compiledApp);
 };
